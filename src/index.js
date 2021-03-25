@@ -74,7 +74,6 @@ async function callAPIs(){
 }
 
 function performOperationAndRespond(apisResponses){
-
     let response = "";
     for (let i=apisResponses[0].lower; i<=apisResponses[0].upper; i++){
     let outputStr = "";
@@ -83,7 +82,7 @@ function performOperationAndRespond(apisResponses){
             outputStr = outputStr + item.output;
         }        
     });
-    response = response + "<div>" + i + ": " + outputStr + "</div>";
+    response = response + "<div>" + i + ": " + outputStr + "</div>";    
 }
     return response;    
 }
@@ -108,3 +107,5 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
     console.log(`app listening at http://localhost:${port}`)
 });
+
+module.exports = performOperationAndRespond;

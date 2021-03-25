@@ -2,6 +2,6 @@
 
 # npm install to install node modules
 
-# npm start to start the Test1 server
+# npm start to run the Test1 technical test
 
 # npm test to run test cases
