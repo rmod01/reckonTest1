@@ -25,7 +25,17 @@ const divisorInfo = {
 };
 
 app.get("/", (req, res) => {
-let response = "<div>Test1 response</div>";
+let response = "";
+for (let i=rangeInfo.lower; i<=rangeInfo.upper; i++){
+    let outputStr = "";
+    divisorInfo.outputDetails.forEach((item) => {
+        if (i % item.divisor === 0){
+            outputStr = outputStr + item.output;
+        }        
+    });
+    response = response + "<div>" + i + ": " + outputStr + "</div>"
+}
+
 res.set("Content-Type", "text/html")
 res.send(response)
 });
